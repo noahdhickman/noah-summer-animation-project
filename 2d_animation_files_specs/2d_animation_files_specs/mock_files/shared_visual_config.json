@@ -1,0 +1,68 @@
+{
+  "formatVersion": "1.1",
+  "simulationId": "hospital_er_flow",
+  "visualization": {
+    "backgroundMode": "svg",
+    "spriteAtlas": {
+      "url": "sprites/hospital_sprites.json",
+      "texture": "sprites/hospital_sprites.png"
+    },
+    "entityTypes": {
+      "Patient_Type_A": {
+        "defaultSprite": "patient_a_default",
+        "scale": 0.8,
+        "stateSprites": {
+          "arrived": "patient_a_arrived",
+          "waiting": "patient_a_waiting",
+          "processing": "patient_a_processing",
+          "traveling": "patient_a_traveling",
+          "blocked": "patient_a_blocked",
+          "exited": "patient_a_exited"
+        }
+      },
+      "Patient_Type_B": {
+        "defaultSprite": "patient_b_default",
+        "scale": 0.8,
+        "stateSprites": {
+          "arrived": "patient_b_arrived",
+          "waiting": "patient_b_waiting",
+          "processing": "patient_b_processing",
+          "traveling": "patient_b_traveling",
+          "blocked": "patient_b_blocked",
+          "exited": "patient_b_exited"
+        }
+      }
+    },
+    "defaultStyles": {
+      "activity": {
+        "shape_type": "rectangle_rounded",
+        "fillColor": "#3498DB",
+        "strokeColor": "#2980B9",
+        "strokeWidth": 2,
+        "labelColor": "#FFFFFF",
+        "labelFont": "Arial",
+        "labelSize": 12
+      },
+      "resource": {
+        "shape_type": "circle",
+        "fillColor": "#2ECC71",
+        "strokeColor": "#27AE60",
+        "strokeWidth": 2,
+        "labelColor": "#FFFFFF"
+      },
+      "generator": {
+        "shape_type": "triangle",
+        "fillColor": "#E74C3C",
+        "strokeColor": "#C0392B",
+        "strokeWidth": 2,
+        "labelColor": "#FFFFFF"
+      },
+      "connector": {
+        "strokeColor": "#7F8C8D",
+        "strokeWidth": 3,
+        "lineStyle": "solid",
+        "arrowSize": 10
+      }
+    }
+  }
+}

@@ -1,0 +1,270 @@
+{
+  "formatVersion": "1.1",
+  "simulationId": "hospital_er_flow",
+  "model": {
+    "activities": [
+      {
+        "id": "0pS8wlt26pR2",
+        "name": "Main ED",
+        "type": "Activity",
+        "x": 1160.0,
+        "y": 320.0,
+        "width": 100,
+        "height": 60,
+        "capacity": 999,
+        "inputBuffer": {
+          "capacity": 1,
+          "x": 1130.0,
+          "y": 320.0
+        },
+        "outputBuffer": {
+          "capacity": 1,
+          "x": 1190.0,
+          "y": 320.0
+        }
+      },
+      {
+        "id": "4pS8x80dtrnM",
+        "name": "Trauma",
+        "type": "Activity",
+        "x": 1160.0,
+        "y": 500.0,
+        "width": 100,
+        "height": 60,
+        "capacity": 999,
+        "inputBuffer": {
+          "capacity": 1,
+          "x": 1130.0,
+          "y": 500.0
+        },
+        "outputBuffer": {
+          "capacity": 1,
+          "x": 1190.0,
+          "y": 500.0
+        }
+      },
+      {
+        "id": "JpS8sea70vSU",
+        "name": "Register",
+        "type": "Activity",
+        "x": 560.0,
+        "y": 320.0,
+        "width": 100,
+        "height": 60,
+        "capacity": 2,
+        "inputBuffer": {
+          "capacity": 1,
+          "x": 530.0,
+          "y": 320.0
+        },
+        "outputBuffer": {
+          "capacity": 1,
+          "x": 590.0,
+          "y": 320.0
+        }
+      },
+      {
+        "id": "RpS8ImHeEGb~",
+        "name": "Triage",
+        "type": "Activity",
+        "x": 820.0,
+        "y": 320.0,
+        "width": 100,
+        "height": 60,
+        "capacity": 3,
+        "inputBuffer": {
+          "capacity": 1,
+          "x": 790.0,
+          "y": 320.0
+        },
+        "outputBuffer": {
+          "capacity": 1,
+          "x": 850.0,
+          "y": 320.0
+        }
+      },
+      {
+        "id": "XpS89p4amNk.",
+        "name": "Low Acuity",
+        "type": "Activity",
+        "x": 1160.0,
+        "y": 140.0,
+        "width": 100,
+        "height": 60,
+        "capacity": 992,
+        "inputBuffer": {
+          "capacity": 1,
+          "x": 1130.0,
+          "y": 140.0
+        },
+        "outputBuffer": {
+          "capacity": 1,
+          "x": 1190.0,
+          "y": 140.0
+        }
+      },
+      {
+        "id": "gqS8f9E2VzrG",
+        "name": "Exit",
+        "type": "Activity",
+        "x": 1460.0,
+        "y": 320.0,
+        "width": 100,
+        "height": 60,
+        "capacity": 2,
+        "inputBuffer": {
+          "capacity": 2,
+          "x": 1430.0,
+          "y": 320.0
+        },
+        "outputBuffer": {
+          "capacity": 1,
+          "x": 1490.0,
+          "y": 320.0
+        }
+      }
+    ],
+    "resources": [
+      {
+        "id": "3ik9vKpGW1fW",
+        "name": "LATS",
+        "type": "Resource",
+        "x": 560.0,
+        "y": -60.0,
+        "capacity": 3
+      },
+      {
+        "id": "5jk9GhGi9F6f",
+        "name": "Trauma",
+        "type": "Resource",
+        "x": 560.0,
+        "y": -200.0,
+        "capacity": 3
+      },
+      {
+        "id": "Ojk9AcR.fMIb",
+        "name": "Main",
+        "type": "Resource",
+        "x": 560.0,
+        "y": 80.0,
+        "capacity": 7
+      }
+    ],
+    "generators": [
+      {
+        "id": "ypS88B5ymz8n",
+        "name": "Patient Arrival",
+        "type": "Generator",
+        "x": 260.0,
+        "y": 320.0,
+        "entityType": "Patient_Type_A"
+      }
+    ],
+    "connectors": [
+      {
+        "id": "qqS8-UkBn.K-",
+        "name": "Arrival → Register",
+        "type": "Connector",
+        "sourceId": "ypS88B5ymz8n",
+        "targetId": "JpS8sea70vSU",
+        "x": 280.0,
+        "y": 190.0,
+        "sourceX": 0.0,
+        "sourceY": 0.0,
+        "targetX": 560.0,
+        "targetY": 380.0
+      },
+      {
+        "id": "EqS84Nhqz93z",
+        "name": "Main ED → Exit",
+        "type": "Connector",
+        "sourceId": "0pS8wlt26pR2",
+        "targetId": "gqS8f9E2VzrG",
+        "x": 730.0,
+        "y": 190.0,
+        "sourceX": 0.0,
+        "sourceY": 0.0,
+        "targetX": 1460.0,
+        "targetY": 380.0
+      },
+      {
+        "id": "DqS8B9To.BJP",
+        "name": "Trauma → Exit",
+        "type": "Connector",
+        "sourceId": "4pS8x80dtrnM",
+        "targetId": "gqS8f9E2VzrG",
+        "x": 770.0,
+        "y": 220.49997500000012,
+        "sourceX": 0.0,
+        "sourceY": 0.0,
+        "targetX": 1540.0,
+        "targetY": 440.99995000000024
+      },
+      {
+        "id": "rqS8saxrOeuE",
+        "name": "Register → Triage",
+        "type": "Connector",
+        "sourceId": "JpS8sea70vSU",
+        "targetId": "RpS8ImHeEGb~",
+        "x": 409.50002499999977,
+        "y": 190.0,
+        "sourceX": 0.0,
+        "sourceY": 0.0,
+        "targetX": 819.0000499999995,
+        "targetY": 380.0
+      },
+      {
+        "id": "BqS8RvcYiQJQ",
+        "name": "Triage → Trauma",
+        "type": "Connector",
+        "sourceId": "RpS8ImHeEGb~",
+        "targetId": "4pS8x80dtrnM",
+        "x": 1029.5000249999998,
+        "y": 500.4999750000001,
+        "sourceX": 900.0,
+        "sourceY": 440.99995000000024,
+        "targetX": 1159.0000499999994,
+        "targetY": 560.0
+      },
+      {
+        "id": "xqS8vSsvLuhR",
+        "name": "Triage → Low Acuity",
+        "type": "Connector",
+        "sourceId": "RpS8ImHeEGb~",
+        "targetId": "XpS89p4amNk.",
+        "x": 579.5000249999997,
+        "y": 100.0,
+        "sourceX": 0.0,
+        "sourceY": 0.0,
+        "targetX": 1159.0000499999994,
+        "targetY": 200.0
+      },
+      {
+        "id": "zqS8f_-gKUiL",
+        "name": "Triage → Main ED",
+        "type": "Connector",
+        "sourceId": "RpS8ImHeEGb~",
+        "targetId": "0pS8wlt26pR2",
+        "x": 580.0,
+        "y": 190.0,
+        "sourceX": 0.0,
+        "sourceY": 0.0,
+        "targetX": 1160.0,
+        "targetY": 380.0
+      },
+      {
+        "id": "HqS8f5L7-XWV",
+        "name": "Low Acuity → Exit",
+        "type": "Connector",
+        "sourceId": "XpS89p4amNk.",
+        "targetId": "gqS8f9E2VzrG",
+        "x": 770.0,
+        "y": 159.50002499999988,
+        "sourceX": 0.0,
+        "sourceY": 0.0,
+        "targetX": 1540.0,
+        "targetY": 319.00004999999976
+      }
+    ]
+  }
+}

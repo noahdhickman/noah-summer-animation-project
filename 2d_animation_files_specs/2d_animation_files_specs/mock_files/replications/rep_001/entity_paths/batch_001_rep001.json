@@ -1,0 +1,151 @@
+{
+  "entity-002": {
+    "type": "Patient_Type_B",
+    "path": [
+      {
+        "clock": 560.0,
+        "x": 260.0,
+        "y": 320.0,
+        "event": "EMA",
+        "state": "arrived",
+        "componentId": "ypS88B5ymz8n"
+      },
+      {
+        "clock": 560.5,
+        "x": 370.0,
+        "y": 290.0,
+        "event": "TRV",
+        "state": "traveling",
+        "componentId": "qqS8-UkBn.K-"
+      },
+      {
+        "clock": 561.0,
+        "x": 530.0,
+        "y": 320.0,
+        "event": "ARQ",
+        "state": "waiting",
+        "componentId": "JpS8sea70vSU"
+      },
+      {
+        "clock": 562.0,
+        "x": 560.0,
+        "y": 320.0,
+        "event": "ASP",
+        "state": "processing",
+        "componentId": "JpS8sea70vSU"
+      },
+      {
+        "clock": 562.5,
+        "x": 590.0,
+        "y": 320.0,
+        "event": "ARL",
+        "state": "blocked",
+        "componentId": "JpS8sea70vSU"
+      },
+      {
+        "clock": 563.0,
+        "x": 690.0,
+        "y": 340.0,
+        "event": "TRV",
+        "state": "traveling",
+        "componentId": "rqS8saxrOeuE"
+      },
+      {
+        "clock": 564.0,
+        "x": 790.0,
+        "y": 320.0,
+        "event": "ARQ",
+        "state": "waiting",
+        "componentId": "RpS8ImHeEGb~"
+      },
+      {
+        "clock": 566.0,
+        "x": 820.0,
+        "y": 320.0,
+        "event": "ASP",
+        "state": "processing",
+        "componentId": "RpS8ImHeEGb~"
+      },
+      {
+        "clock": 572.0,
+        "x": 850.0,
+        "y": 320.0,
+        "event": "ARL",
+        "state": "blocked",
+        "componentId": "RpS8ImHeEGb~"
+      },
+      {
+        "clock": 573.0,
+        "x": 960.0,
+        "y": 280.0,
+        "event": "TRV",
+        "state": "traveling",
+        "componentId": "xqS8vSsvLuhR"
+      },
+      {
+        "clock": 574.0,
+        "x": 1130.0,
+        "y": 140.0,
+        "event": "ARQ",
+        "state": "waiting",
+        "componentId": "XpS89p4amNk."
+      },
+      {
+        "clock": 576.0,
+        "x": 1160.0,
+        "y": 140.0,
+        "event": "ASP",
+        "state": "processing",
+        "componentId": "XpS89p4amNk."
+      },
+      {
+        "clock": 606.0,
+        "x": 1190.0,
+        "y": 140.0,
+        "event": "ARL",
+        "state": "blocked",
+        "componentId": "XpS89p4amNk."
+      },
+      {
+        "clock": 607.0,
+        "x": 1325.0,
+        "y": 200.0,
+        "event": "TRV",
+        "state": "traveling",
+        "componentId": "HqS8f5L7-XWV"
+      },
+      {
+        "clock": 608.0,
+        "x": 1430.0,
+        "y": 320.0,
+        "event": "ARQ",
+        "state": "waiting",
+        "componentId": "gqS8f9E2VzrG"
+      },
+      {
+        "clock": 610.0,
+        "x": 1460.0,
+        "y": 320.0,
+        "event": "ASP",
+        "state": "processing",
+        "componentId": "gqS8f9E2VzrG"
+      },
+      {
+        "clock": 615.0,
+        "x": 1490.0,
+        "y": 320.0,
+        "event": "ARL",
+        "state": "traveling",
+        "componentId": "gqS8f9E2VzrG"
+      },
+      {
+        "clock": 616.0,
+        "x": 1520.0,
+        "y": 320.0,
+        "event": "EME",
+        "state": "exited",
+        "componentId": null
+      }
+    ]
+  }
+}

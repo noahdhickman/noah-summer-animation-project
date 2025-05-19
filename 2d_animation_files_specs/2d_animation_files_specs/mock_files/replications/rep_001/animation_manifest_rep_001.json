@@ -1,0 +1,39 @@
+{
+  "metadata": {
+    "formatVersion": "1.1",
+    "simulationId": "hospital_er_flow",
+    "replication": 1,
+    "name": "Hospital ER Flow - Replication 1",
+    "description": "Animation data for replication 1 of the Hospital ER flow model",
+    "createdAt": "2025-05-17T10:30:00Z",
+    "duration": 1440.0,
+    "timeUnit": "MINUTES",
+    "modelLayoutPath": "../../model_layout.json",
+    "sharedVisualConfigPath": "../../shared_visual_config.json",
+    "backgroundSvgPath": "../../diagram.svg"
+  },
+  "entityPathDataFiles": [
+    {
+      "filePath": "entity_paths/batch_000_rep001.json",
+      "entryTimeStart": 0.0,
+      "entryTimeEnd": 300.0,
+      "entityCount": 1
+    },
+    {
+      "filePath": "entity_paths/batch_001_rep001.json",
+      "entryTimeStart": 300.0,
+      "entryTimeEnd": 600.0,
+      "entityCount": 1
+    }
+  ],
+  "statisticsDataFiles": [
+    {
+      "type": "activity_metric",
+      "componentId": "RpS8ImHeEGb~",
+      "metricName": "processingCount",
+      "filePath": "statistics/activity_RpS8ImHeEGb~_processingCount_rep001.json",
+      "timeStart": 0.0,
+      "timeEnd": 1440.0
+    }
+  ]
+}

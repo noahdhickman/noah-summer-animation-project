@@ -1,0 +1,171 @@
+{
+  "metadata": {
+    "formatVersion": "1.0",
+    "simulationId": "simple_clinic_flow_20250516_rep1",
+    "name": "Simple Clinic Flow - Rep 1",
+    "description": "Animation for a basic clinic model with registration and consultation.",
+    "createdAt": "2025-05-16T14:00:00Z",
+    "duration": 240.0,
+    "timeUnit": "MINUTES",
+    "replication": 1
+  },
+  "model": {
+    "activities": [
+      {
+        "id": "act_register",
+        "name": "Registration",
+        "type": "Activity",
+        "x": 200,
+        "y": 150,
+        "width": 100,
+        "height": 70,
+        "capacity": 1,
+        "inputBuffer": {
+          "x": 160,
+          "y": 150,
+          "capacity": 5,
+          "direction": "left",
+          "spacing": 10
+        },
+        "visual_settings": {
+          "fillColor": "#ADD8E6"
+        }
+      },
+      {
+        "id": "act_consult",
+        "name": "Consultation",
+        "type": "Activity",
+        "x": 400,
+        "y": 150,
+        "width": 100,
+        "height": 70,
+        "capacity": 1,
+        "resourceIds": ["res_doctor"],
+        "visual_settings": {
+          "fillColor": "#90EE90"
+        }
+      }
+    ],
+    "resources": [
+      {
+        "id": "res_doctor",
+        "name": "Doctor",
+        "type": "Resource",
+        "x": 400,
+        "y": 80,
+        "capacity": 1,
+        "visual_settings": {
+          "icon_idle": "doctor_idle",
+          "icon_busy": "doctor_busy"
+        }
+      }
+    ],
+    "generators": [
+      {
+        "id": "gen_patients",
+        "name": "Patient Arrivals",
+        "type": "Generator",
+        "x": 50,
+        "y": 150,
+        "generatesEntityType": "Patient",
+        "visual_settings": {
+          "icon": "door_icon"
+        }
+      }
+    ],
+    "connectors": [
+      {
+        "id": "conn_entry_to_reg",
+        "name": "Path to Registration",
+        "type": "Connector",
+        "sourceId": "gen_patients",
+        "targetId": "act_register"
+      },
+      {
+        "id": "conn_reg_to_consult",
+        "name": "Path to Consultation",
+        "type": "Connector",
+        "sourceId": "act_register",
+        "targetId": "act_consult"
+      },
+      {
+        "id": "conn_consult_to_exit",
+        "name": "Path to Exit",
+        "type": "Connector",
+        "sourceId": "act_consult",
+        "targetId": "model_exit"
+      }
+    ]
+  },
+  "entityPathDataFiles": [
+    {
+      "filePath": "entity_paths/paths_0_to_120_min.json",
+      "entryTimeStart": 0.0,
+      "entryTimeEnd": 120.0,
+      "entityCount": 45
+    },
+    {
+      "filePath": "entity_paths/paths_120_to_240_min.json",
+      "entryTimeStart": 120.0,
+      "entryTimeEnd": 240.0,
+      "entityCount": 38
+    }
+  ],
+  "visualization": {
+    "backgroundMode": "svg",
+    "svgPath": "diagrams/simple_clinic_diagram.svg",
+    "canvasSize": {
+      "width": 800,
+      "height": 400
+    },
+    "spriteAtlas": {
+      "url": "sprites/clinic_sprites.json",
+      "texture": "sprites/clinic_sprites.png"
+    },
+    "entityTypes": {
+      "Patient": {
+        "defaultSprite": "patient_walk_down_0",
+        "scale": 0.5,
+        "anchor": { "x": 0.5, "y": 0.9 },
+        "stateSprites": {
+          "waiting": "patient_idle_0",
+          "processing": "patient_interact_0",
+          "traveling": "patient_walk_cycle",
+          "exited": null
+        }
+      }
+    },
+    "defaultStyles": {
+      "activity": {
+        "shape_type": "rectangle_rounded",
+        "fillColor": "#CCCCCC",
+        "strokeColor": "#999999",
+        "strokeWidth": 1,
+        "labelColor": "#000000",
+        "labelFont": "Arial",
+        "labelSize": 10
+      },
+      "connector": {
+        "strokeColor": "#666666",
+        "strokeWidth": 2
+      }
+    },
+    "animation": {
+      "speed": 1.0,
+      "smoothing": true
+    },
+    "camera": {
+      "x": 400,
+      "y": 200,
+      "zoom": 1.0
+    }
+  },
+  "references": {
+    "statisticsFiles": [
+      {
+        "type": "summary",
+        "path": "statistics/clinic_summary_rep1.json"
+      }
+    ]
+  }
+}
